@@ -1,0 +1,51 @@
+// Create a user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "ada",
+    "email": "ada@gmail.com",
+    "password": "ini",
+    "confPassword": "ini",
+    "role": "admin"
+}
+
+###
+// Get all users (adminOnly)
+GET http://localhost:5000/users
+
+###
+// Get single users (adminOnly)
+GET http://localhost:5000/users/uuid-yg-didapat
+
+
+###
+Update users (adminOnly)
+PATCH http://localhost:5000/users/uuid-yg-didapat
+Content-Type: application/json
+
+{
+    "name": "ame",
+    "email": "test@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "user"
+}
+
+###
+login users
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "inipw"
+}
+
+###
+Info users
+GET http://localhost:5000/Me
+
+###
+Logout users
+DELETE http://localhost:5000/logout
